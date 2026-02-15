@@ -60,6 +60,7 @@ SAMS_MODELS=(
 )
 
 VAE_MODELS=(
+    "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors"
 )
 
 ESRGAN_MODELS=(
@@ -73,6 +74,10 @@ CONTROLNET_MODELS=(
 UPSCALE_MODELS=(
     "https://huggingface.co/MIUProject/VNCCS/resolve/main/models/upscale_models/2x_APISR_RRDB_GAN_generator.pth?download=true"
     "https://huggingface.co/MIUProject/VNCCS/resolve/main/models/upscale_models/4x_APISR_GRL_GAN_generator.pth?download=true"
+)
+
+TEXT_ENCODER_MODELS=(
+    "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors"
 )
 
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
@@ -115,6 +120,9 @@ function provisioning_start() {
     provisioning_get_files \
 	"${COMFYUI_DIR}/models/upscale_models" \
 	"${UPSCALE_MODELS[@]}"
+    provisioning_get_files \
+	"${COMFYUI_DIR}/models/text_encoders" \
+	"${TEXT_ENCODER_MODELS[@]}"
     provisioning_print_end
 }
 
