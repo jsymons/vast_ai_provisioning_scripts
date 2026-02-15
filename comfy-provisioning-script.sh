@@ -32,6 +32,7 @@ CHECKPOINT_MODELS=(
 )
 
 UNET_MODELS=(
+    "https://huggingface.co/unsloth/Qwen-Image-Edit-2511-GGUF/resolve/main/qwen-image-edit-2511-Q5_0.gguf"
 )
 
 LORA_MODELS_DMD=(
@@ -53,6 +54,7 @@ LORA_MODELS_QWEN=(
 LORA_MODELS=(
     "https://huggingface.co/MIUProject/VNCCS/resolve/main/models/loras/vn_character_sheet.safetensors?download=true"
     "https://huggingface.co/MIUProject/VNCCS/resolve/main/models/loras/vn_character_sheet_v4.safetensors?download=true"
+    "https://huggingface.co/lightx2v/Qwen-Image-Edit-2511-Lightning/resolve/main/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors"
 )
 
 SAMS_MODELS=(
