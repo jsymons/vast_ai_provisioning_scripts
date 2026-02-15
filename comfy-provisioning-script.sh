@@ -32,14 +32,23 @@ CHECKPOINT_MODELS=(
 UNET_MODELS=(
 )
 
-LORA_MODELS=(
+LORA_MODELS_DMD=(
     "https://huggingface.co/MIUProject/VNCCS/resolve/main/models/loras/DMD2/dmd2_sdxl_4step_lora_fp16.safetensors?download=true"
+)
+
+LORA_MODELS_IL=(
     "https://huggingface.co/MIUProject/VNCCS/resolve/main/models/loras/IL/mimimeter.safetensors?download=true"
+)
+
+LORA_MODELS_QWEN=(
     "https://huggingface.co/MIUProject/VNCCS/resolve/main/models/loras/qwen/VNCCS/ClothesHelperUltimateV1_000005100.safetensors?download=true"
     "https://huggingface.co/MIUProject/VNCCS/resolve/main/models/loras/qwen/VNCCS/EmotionCoreV1_000003000.safetensors?download=true"
     "https://huggingface.co/MIUProject/VNCCS/resolve/main/models/loras/qwen/VNCCS/EmotionCoreV2_000004700.safetensors?download=true"
     "https://huggingface.co/MIUProject/VNCCS/resolve/main/models/loras/qwen/VNCCS/TransferClothes_000006700.safetensors?download=true"
     "https://huggingface.co/MIUProject/VNCCS/resolve/main/models/loras/qwen/VNCCS/poser_helper_v2_000004200.safetensors?download=true"
+)
+
+LORA_MODELS=(
     "https://huggingface.co/MIUProject/VNCCS/resolve/main/models/loras/vn_character_sheet.safetensors?download=true"
     "https://huggingface.co/MIUProject/VNCCS/resolve/main/models/loras/vn_character_sheet_v4.safetensors?download=true"
 )
@@ -78,10 +87,19 @@ function provisioning_start() {
         "${COMFYUI_DIR}/models/unet" \
         "${UNET_MODELS[@]}"
     provisioning_get_files \
+        "${COMFYUI_DIR}/models/lora/DMD2" \
+        "${LORA_MODELS_DMD[@]}"
+    provisioning_get_files \
+        "${COMFYUI_DIR}/models/lora/IL" \
+        "${LORA_MODELS_IL[@]}"
+    provisioning_get_files \
+        "${COMFYUI_DIR}/models/lora/qwen/VNCCS" \
+        "${LORA_MODELS_QWEN[@]}"
+    provisioning_get_files \
         "${COMFYUI_DIR}/models/lora" \
         "${LORA_MODELS[@]}"
     provisioning_get_files \
-        "${COMFYUI_DIR}/models/controlnet" \
+        "${COMFYUI_DIR}/models/controlnet/SDXL" \
         "${CONTROLNET_MODELS[@]}"
     provisioning_get_files \
         "${COMFYUI_DIR}/models/vae" \
